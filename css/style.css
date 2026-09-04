@@ -253,6 +253,13 @@ a {
   display: none;
 }
 
+.case-visual-icon {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+}
+
 .case-summary-text {
   flex: 1 1 auto;
   min-width: 0;
@@ -315,6 +322,13 @@ details[open] .case-icon::before {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+.case-flowchart {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 4px;
 }
 
 .case-row h4 {

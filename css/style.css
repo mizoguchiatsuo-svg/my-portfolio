@@ -190,12 +190,6 @@ a {
   margin: 0 0 48px;
 }
 
-.placeholder-note {
-  font-size: 0.85rem;
-  color: #a37a3d;
-  margin-bottom: 40px;
-}
-
 /* ==========================================================
    Approach cards
    ========================================================== */
@@ -229,7 +223,8 @@ a {
 }
 
 /* ==========================================================
-   Works
+   Works — case study accordions
+   (accent color used more deliberately here than elsewhere)
    ========================================================== */
 .works-list {
   display: flex;
@@ -237,35 +232,111 @@ a {
   gap: 24px;
 }
 
-.work-item {
+.case-card {
   background: var(--color-bg);
-  padding: 30px 32px;
   border-radius: 6px;
   box-shadow: 0 2px 14px rgba(87, 65, 40, 0.06);
+  overflow: hidden;
 }
 
-.work-tag {
+.case-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 28px 32px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.case-summary::-webkit-details-marker {
+  display: none;
+}
+
+.case-summary-text {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.case-meta {
   display: inline-block;
+  width: fit-content;
   font-size: 0.74rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   color: #fff;
   background: var(--color-accent);
   padding: 4px 12px;
   border-radius: 999px;
-  margin-bottom: 14px;
 }
 
-.work-item h3 {
+.case-title {
+  display: inline-block;
+  width: fit-content;
   font-family: var(--font-serif);
-  font-size: 1.08rem;
-  margin: 0 0 10px;
+  font-size: 1.1rem;
+  color: var(--color-text);
+  border-bottom: 2px solid var(--color-accent);
+  padding-bottom: 4px;
 }
 
-.work-item p {
+.case-hook {
+  color: var(--color-accent);
+  font-size: 0.92rem;
+}
+
+.case-icon {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.case-icon::before {
+  content: "+";
+}
+
+details[open] .case-icon::before {
+  content: "\2212"; /* minus sign */
+}
+
+.case-body {
+  padding: 24px 32px 32px;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.case-row h4 {
+  font-family: var(--font-serif);
+  font-size: 0.92rem;
+  color: var(--color-accent);
+  margin: 0 0 8px;
+  letter-spacing: 0.04em;
+}
+
+.case-row p {
   margin: 0;
   color: var(--color-text-muted);
   font-size: 0.92rem;
-  max-width: 640px;
+}
+
+.case-note {
+  margin: 0;
+  padding: 14px 32px 22px;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  border-top: 1px solid var(--color-border);
 }
 
 /* ==========================================================
